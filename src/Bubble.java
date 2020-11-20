@@ -12,6 +12,48 @@ class Bubble {
     private float speedY;
     private float speedX;
 
+    public Bubble(Sketch sketch) {
+        s = sketch;
+        diameter = s.random(25, 50); 
+        x = s.random(diameter / 2, s.width - diameter / 2);
+        y = s.random(diameter / 2, s.height - diameter / 2);
+
+
+        borderColor = s.randomColor(false);
+        col = s.randomColor(true);
+        
+        speedX = s.random(-2,-4);
+        speedY = s.random(-2,-4);
+    }
+    
+    public Bubble(Sketch sketch, float X, float Y, float bubbleDiam, int bubbleColor, float sx, float sy) {
+     s = sketch;
+     diameter = bubbleDiam;
+     x = X;
+     y = Y;
+     borderColor = bubbleColor;
+     col = bubbleColor;
+     speedX = sx;
+     speedY = sy;    
+    
+    
+    
+    
+    
+    }
+      
+      
+      
+      public float getRadius(){
+        return diameter / 2;
+
+
+      }
+      
+    
+    
+    
+    
     /**
      * SUMMATIVE REQUIRED Add two constructors for the Bubble class, one that is
      * mostly default and one that allows custom values for whichever you want to be
@@ -20,8 +62,19 @@ class Bubble {
      * 
      * You can use `s.color(255, 150)` to create a transluscent 
      * white color if you wish
-     * 
-     * SUMMATIVE OPTIONAL Make it so that some of your constructors (including
+     */ 
+     
+
+
+
+     
+     
+     
+     
+     
+     
+     
+     /* SUMMATIVE OPTIONAL Make it so that some of your constructors (including
      * possibly the default) use a random number to set the position and/or speed of
      * the object.
      * 

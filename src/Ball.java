@@ -18,6 +18,11 @@ class Ball {
         x = s.random(diameter / 2, s.width - diameter / 2);
         y = s.random(diameter / 2, s.height - diameter / 2);
 
+        col = s.randomColor(false);
+        speedX = s.random(5,10);
+        speedY = s.random(5,10);
+      
+        
         /*
          * SUMMATIVE REQUIRED use the randomColor() method in the sketch to set default
          * balls to a solid random color
@@ -30,10 +35,26 @@ class Ball {
     }
 
     /** This constructor lets you specify all of the ball instance variables */
-    public Ball(Sketch s, float X, float Y, float ballDiam, int ballColor, float sx, float sy) {
+    public Ball(Sketch sketch, float X, float Y, float ballDiam, int ballColor, float sx, float sy) {
         /* SUMMATIVE REQUIRED Fill out this constructor */
+        s = sketch;
+        diameter = ballDiam;
+        x = X;
+        y = Y;
+        col = ballColor;
+        speedX = sx;
+        speedY = sy;
+        
+    
     }
+      
+      
+      
+      public float getRadius(){
+        return diameter / 2;
 
+
+      }
     /*
      * SUMMATIVE REQUIRED Add a method called `getRadius()` that returns a float
      * representing the radius of the ball
@@ -48,7 +69,13 @@ class Ball {
      */
 
     /** Draws the ball. */
-    public void drawBall() {
+    public void drawBall(){
+       
+       
+    
+       
+       
+       
         /*
          * SUMMATIVE OPTIONAL Make it possible to change the border color of these balls
          * as well as the fill color. Change the `sketch.stroke(col)` line below to use
